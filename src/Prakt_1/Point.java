@@ -9,6 +9,13 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+
+    /**
+     * Checks if this point lies inside or on the boundary of a circle
+     * @param c Center of circle
+     * @param r Radius of circle
+     * @return {@code true} if the point is inside or on the circle, {@code false} otherwise.
+     */
     public boolean isInCircle(Point c, double r) {
         return (Math.sqrt(Math.pow(this.x - c.x, 2) + Math.pow(this.y - c.y, 2))) <= r;
     }
