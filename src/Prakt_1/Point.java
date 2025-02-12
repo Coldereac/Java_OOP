@@ -9,7 +9,6 @@ public class Point {
         this.x = x;
         this.y = y;
     }
-
     public boolean isInCircle(Point c, double r) {
         return (Math.sqrt(Math.pow(this.x - c.x, 2) + Math.pow(this.y - c.y, 2))) <= r;
     }
