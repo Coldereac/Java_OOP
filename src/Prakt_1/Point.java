@@ -1,6 +1,5 @@
 package Prakt_1;
 
-
 public class Point {
     public double x;
     public double y;
@@ -27,6 +26,7 @@ public class Point {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (!(o instanceof Point point)) return false;
         return x == point.x && y == point.y;
     }
