@@ -1,8 +1,6 @@
 package Prakt_2;
 
-import java.util.Arrays;
-
-public class Vector {
+class Vector {
     private double[] coords;
 
     public Vector(double ... coords) {
