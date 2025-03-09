@@ -26,9 +26,7 @@ public class Main {
         System.out.println("Баланс першого аккаунта після зняття: " + account1.getBalance());
         System.out.printf("Загальний баланс: %.2f%n", BankAccount.getTotalBalance());
 
-        //Перевірка встановлення процента та його нарахування
-        BankAccount.setInterestRate(5.7);
-        account1.addPercent();
+        //Перевірка процента нарахування
         System.out.printf("Баланс першого аккаунта після додання проценту: %.2f%n", account1.getBalance());
         System.out.printf("Загальний баланс: %.2f%n", BankAccount.getTotalBalance());
 
