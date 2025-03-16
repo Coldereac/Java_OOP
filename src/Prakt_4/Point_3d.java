@@ -3,7 +3,7 @@ package Prakt_4;
 import Prakt_1.Point;
 
 public class Point_3d extends Point {
-    public double z;
+    private double z;
 
     public Point_3d(double x, double y, double z) {
         super(x, y);
@@ -18,12 +18,31 @@ public class Point_3d extends Point {
      * @return {@code true} if the point is inside or on the sphere, {@code false} otherwise.
      */
     public boolean isInSphere(Point_3d c, double r) {
-        return (Math.sqrt(Math.pow(this.x - c.x, 2) + Math.pow(this.y - c.y, 2)) + Math.pow(this.z - c.z, 2)) <= r;
+        return getDistance(c) <= r;
+    }
+
+    public double getDistance(Point_3d point) {
+        return Math.sqrt(Math.pow(this.getX() - point.getX(), 2) + Math.pow(this.getY() - point.getY(), 2) + Math.pow(this.getZ() - point.getZ(), 2));
+    }
+
+    @Override
+    public void scale(double s) {
+        this.setX(this.getX() * s);
+        this.setY(this.getY() * s);
+        this.setZ(this.getZ() * s);
     }
 
     @Override
     public String toString() {
-        return "Point3d(" + x + ", " + y + ", " + z + ")";
+        return String.format("Point_3d( %.2f, %.2f, %.2f)", this.getX(), this.getY(), this.getZ());
+    }
+
+    public double getZ() {
+        return z;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
     }
 
     @Override

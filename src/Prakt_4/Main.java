@@ -23,11 +23,19 @@ public class Main {
         System.out.println("p1 equals p2: " + p1.equals(p2));
         System.out.println("p1 equals p3: " + p1.equals(p3));
 
+        //Перевірка distance
+        p2.setY(-5.6);
+        p2.setZ(10);
+        System.out.println("Distance between p1 and p2: " + ((Point_3d) p1).getDistance(p2));
+
         //Перевірка isInSphere
-        p2.y = -5.6;
-        p2.z = 10;
         double r = 10;
         System.out.println("p1 is in sphere with center " + p2 + " and radius " + r + ": " + ((Point_3d) p1).isInSphere(p2, r));
         System.out.println("p1 is in sphere with center " + p3 + " and radius " + r + ": " + ((Point_3d) p1).isInSphere(p3, r));
+
+        //Перевірка scale
+        double s = 3;
+        p3.scale(s);
+        System.out.println("p3 after scaling: " + p3);
     }
 }
