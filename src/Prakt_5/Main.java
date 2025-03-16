@@ -11,6 +11,42 @@ Rectangle створити додатковий метод обчислення 
 
 public class Main {
     public static void main(String[] args) {
+        //перевірка викидування exceptions у конструкторах
+        System.out.println("Testing throwing exceptions in constructors:");
+        System.out.println("Circle: ");
+        try {
+            Circle circle = new Circle(-5);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("\nTriangle: ");
+        try {
+            Triangle triangle = new Triangle(-5, 10, -5);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Triangle triangle = new Triangle(1, 1, 2);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("\nRectangle: ");
+        try {
+            Rectangle rectangle = new Rectangle(-5, -4);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        Figure[] figures = {new Circle(20), new Rectangle(5, 10), new Triangle(7, 3, 9)};
+        //Перевірка методів периметра та площі для кожного, а також діагоналі для прямокутника
+
+        for (Figure figure : figures) {
+            figure.print();
+        }
 
     }
 }

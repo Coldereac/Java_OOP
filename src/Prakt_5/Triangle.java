@@ -16,7 +16,7 @@ public class Triangle extends Figure {
             throw new IllegalArgumentException("c < 0");
         }
         if (a + b <= c || a + c <= b || b + c <= a) {
-            throw new IllegalArgumentException("Invalid sides for a triangle. Triangle with such sides can't exist");
+            throw new IllegalArgumentException("Invalid sides for a triangle. Triangle, where one side bigger than the sum of two others, can't exist");
         }
         this.a = a;
         this.b = b;
@@ -32,5 +32,22 @@ public class Triangle extends Figure {
     public double getArea() {
         double s = getPerimeter() / 2;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    @Override
+    public void print() {
+        System.out.printf("\nTriangle:\n Sides: %.2f %.2f %.2f\n Perimeter: %.2f\n Area: %.2f\n", a, b, c, getPerimeter(), getArea());
+    }
+
+    public double getA() {
+        return a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public double getC() {
+        return c;
     }
 }

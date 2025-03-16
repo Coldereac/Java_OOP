@@ -25,7 +25,20 @@ public class Rectangle extends Figure {
         return a * b;
     }
 
+    @Override
+    public void print() {
+        System.out.printf("\nRectangle:\n Sides: %.2f %.2f\n Perimeter: %.2f\n Area: %.2f\n Diagonal: %.2f\n", a, b, getPerimeter(), getArea(), getDiagonal());
+    }
+
     public double getDiagonal() {
         return Math.sqrt(a * a + b * b);
+    }
+
+    public double getA() {
+        return a;
+    }
+
+    public double getB() {
+        return b;
     }
 }
