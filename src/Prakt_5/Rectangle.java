@@ -5,11 +5,11 @@ public class Rectangle extends Figure {
     private double b;
 
     public Rectangle(double a, double b) {
-        if (a < 0) {
-            throw new IllegalArgumentException("a < 0");
+        if (a <= 0) {
+            throw new IllegalArgumentException("a <= 0");
         }
-        if (b < 0) {
-            throw new IllegalArgumentException("b < 0");
+        if (b <= 0) {
+            throw new IllegalArgumentException("b <= 0");
         }
         this.a = a;
         this.b = b;

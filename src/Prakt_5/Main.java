@@ -39,14 +39,20 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println("\nSquare: ");
+        try {
+            Square square = new Square(-5);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println();
 
-        Figure[] figures = {new Circle(20), new Rectangle(5, 10), new Triangle(7, 3, 9)};
+        Figure[] figures = {new Circle(20), new Triangle(7, 3, 9), new Rectangle(5, 10), new Square(9), new RectangularPrism(7, 2, 9), new Cube(6)};
         //Перевірка методів периметра та площі для кожного, а також діагоналі для прямокутника
 
         for (Figure figure : figures) {
             figure.print();
         }
-
     }
 }

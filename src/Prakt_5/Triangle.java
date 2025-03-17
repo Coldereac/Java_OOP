@@ -6,14 +6,14 @@ public class Triangle extends Figure {
     private double c;
 
     public Triangle(double a, double b, double c) {
-        if (a < 0) {
-            throw new IllegalArgumentException("a < 0");
+        if (a <= 0) {
+            throw new IllegalArgumentException("a <= 0");
         }
-        if (b < 0) {
-            throw new IllegalArgumentException("b < 0");
+        if (b <= 0) {
+            throw new IllegalArgumentException("b <= 0");
         }
-        if (c < 0) {
-            throw new IllegalArgumentException("c < 0");
+        if (c <= 0) {
+            throw new IllegalArgumentException("c <= 0");
         }
         if (a + b <= c || a + c <= b || b + c <= a) {
             throw new IllegalArgumentException("Invalid sides for a triangle. Triangle, where one side bigger than the sum of two others, can't exist");
