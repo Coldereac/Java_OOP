@@ -1,6 +1,5 @@
 package Prakt_2;
-
-class Vector {
+public class Vector {
     private double[] coords;
 
     public Vector(double ... coords) {
