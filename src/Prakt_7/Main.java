@@ -5,7 +5,6 @@ package Prakt_7;
 a) отримати об'єкт Class трьома різними способами;
 b) вивести усі модифікатори класу String;
 c) вивести інформацію про всіх public конструктори класу String;
-
 d) вивести інформацію про всі поля класу String;
 e) вивести інформацію про всі public методи класу String;
 f) викликати будь-який із методів та роздрукувати результат.
@@ -14,7 +13,7 @@ f) викликати будь-який із методів та роздрук�
 import java.lang.reflect.*;
 
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
         //отримати об'єкт Class трьома різними способами
         Class<?> string1 = String.class;
         Class<?> string2 = "Hallo".getClass();
@@ -24,7 +23,7 @@ public class Main {
         System.out.println("Модифікатори String: " + Modifier.toString(string1.getModifiers()) + "\n");
 
         // вивести інформацію про всіх public конструктори класу String
-        System.out.println("Усі public конструкт String: ");
+        System.out.println("Усі public конструктори String: ");
         Constructor<?>[] constructors = string1.getConstructors();
         for (Constructor<?> constructor : constructors) {
             System.out.println(constructor);
@@ -52,5 +51,17 @@ public class Main {
         System.out.println("str = " + str);
         System.out.println("Спробуем метод trim:");
         System.out.println("str = " + str.trim());
+
+        System.out.println();
+
+        Class<?> clazz = ClassWithPrivateMethod.class;
+        Object obj = clazz.getDeclaredConstructor().newInstance();
+        Field field = clazz.getDeclaredField("message");
+        field.setAccessible(true);
+        field.set(obj, "Modified message");
+
+        Method method = clazz.getDeclaredMethod("printMessage");
+        method.setAccessible(true);
+        method.invoke(obj);
     }
 }

@@ -1,6 +1,10 @@
 package Prakt_1;
 
-public class Point {
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+public class Point implements Comparable<Point> {
     private double x;
     private double y;
 
@@ -55,5 +59,19 @@ public class Point {
         if (this == o) return true;
         if (!(o instanceof Point point)) return false;
         return x == point.x && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    @Override
+    public int compareTo(@NotNull Point o) {
+        int cmpX = Double.compare(this.x, o.x);
+        if (cmpX != 0) {
+            return cmpX;
+        }
+        return Double.compare(this.y, o.y);
     }
 }
