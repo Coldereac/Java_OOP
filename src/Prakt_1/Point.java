@@ -1,7 +1,5 @@
 package Prakt_1;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Objects;
 
 public class Point implements Comparable<Point> {
@@ -67,7 +65,7 @@ public class Point implements Comparable<Point> {
     }
 
     @Override
-    public int compareTo(@NotNull Point o) {
+    public int compareTo( Point o) {
         int cmpX = Double.compare(this.x, o.x);
         if (cmpX != 0) {
             return cmpX;
