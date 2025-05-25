@@ -1,0 +1,39 @@
+--- Початковий вміст TreeMap ---
+Date: 2024-12-25, Row: 1, Seat: 1 -> Alice
+Date: 2024-12-25, Row: 1, Seat: 2 -> Bob
+Date: 2024-12-25, Row: 1, Seat: 3 -> Frank
+Date: 2024-12-25, Row: 1, Seat: 5 -> Olivia
+Date: 2024-12-25, Row: 2, Seat: 1 -> Charlie
+Date: 2025-01-10, Row: 5, Seat: 2 -> Grace
+Date: 2025-01-10, Row: 5, Seat: 3 -> David
+
+--- Пошук квитка ---
+Квиток знайдено! Покупець: Alice
+
+--- Множина ключів TreeMap ---
+Date: 2024-12-25, Row: 1, Seat: 1
+Date: 2024-12-25, Row: 1, Seat: 2
+Date: 2024-12-25, Row: 1, Seat: 3
+Date: 2024-12-25, Row: 1, Seat: 5
+Date: 2024-12-25, Row: 2, Seat: 1
+Date: 2025-01-10, Row: 5, Seat: 2
+Date: 2025-01-10, Row: 5, Seat: 3
+
+--- Видалення квитка ---
+Квиток видалено: Date: 2024-12-25, Row: 1, Seat: 2, Покупець: Bob
+
+--- TreeMap після видалення ---
+Date: 2024-12-25, Row: 1, Seat: 1 -> Alice
+Date: 2024-12-25, Row: 1, Seat: 3 -> Frank
+Date: 2024-12-25, Row: 1, Seat: 5 -> Olivia
+Date: 2024-12-25, Row: 2, Seat: 1 -> Charlie
+Date: 2025-01-10, Row: 5, Seat: 2 -> Grace
+Date: 2025-01-10, Row: 5, Seat: 3 -> David
+
+--- Множина ключів після видалення (та сама, що пов'язана з TreeMap) ---
+Date: 2024-12-25, Row: 1, Seat: 1
+Date: 2024-12-25, Row: 1, Seat: 3
+Date: 2024-12-25, Row: 1, Seat: 5
+Date: 2024-12-25, Row: 2, Seat: 1
+Date: 2025-01-10, Row: 5, Seat: 2
+Date: 2025-01-10, Row: 5, Seat: 3
